@@ -1,21 +1,29 @@
  ##########################################################
  #               importar data desde Excel                #
  ##########################################################
- #
- library(readxl)
+
+ ##############################################################################################################
+ # The general idea of this code is to obtain the geometric mean of a very large set of variables that allows #
+ #us to obtain an estimate of inflation for a given period in this case from 2007 to 2015. The data presented #
+ #here was generated in a random manner and they do not refer to the evaluation of any country.               #
+ ##############################################################################################################
+
+library(readxl)
  data_PI <- read_excel("D:/Datos/ehermoso/Downloads/IPC_2007_2015_PARTYLAND.xlsx", "variaciones")
 
   #View(data_PI)
  #length(data_PI)
  #archiv_importad_xls<-matrix(data_PI)
 
- ######################################################
- #  creaci髇 de la funci髇 para la media geom閠rica   #
- ######################################################
+ #####################################################
+ #  Creaci贸n de la funci贸n para la media geom茅trica  #
+ #####################################################
+ #  Creation of the function for the geometric mean  #
+ #####################################################
 
 med_geo <- function(x) {
 
-  n<- nrow(data_PI[i]) #calculo del n鷐ero de filas de la tablas
+  n<- nrow(data_PI[i]) #calculo del n煤mero de filas de la tablas
   
   pro<- prod(data_PI[i])
   
@@ -23,9 +31,11 @@ med_geo <- function(x) {
     
 }
 
- ###########################################
- #  aplicaci髇 de la funci髇 a los datos   #
- ###########################################
+ #############################################
+ #   aplicaci贸n de la funci贸n a los datos    #
+ #############################################
+ # application of the function to the data   #
+ #############################################
 
  salida <- c(1:362)
 
